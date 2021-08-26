@@ -3,7 +3,7 @@ package com.example.demo.controller;
 import java.time.LocalDateTime;
 
 public class InsertBody {
-	 int id;
+	
 	 String stockTicker;
 	private double price;
 	int volume;
@@ -16,10 +16,9 @@ public class InsertBody {
 		super();
 	}
 	
-	 public InsertBody(int id, String stockTicker, double price, int volume, String buyOrSell, int statusCode,
+	 public InsertBody( String stockTicker, double price, int volume, String buyOrSell, int statusCode,
 			LocalDateTime date) {
 		super();
-		this.id = id;
 		this.stockTicker = stockTicker;
 		this.price = price;
 		this.volume = volume;
@@ -28,12 +27,6 @@ public class InsertBody {
 		this.date = date;
 	}
 	 
-	public int getId() {
-		return id;	
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getStockTicker() {
 		return stockTicker;
 	}

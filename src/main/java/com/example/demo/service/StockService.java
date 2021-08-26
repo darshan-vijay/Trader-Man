@@ -3,10 +3,11 @@ package com.example.demo.service;
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Stock;
 import com.example.demo.repository.StockRepository;
-
+@Service
 public class StockService {
 	@Autowired
 	StockRepository repo;
@@ -16,6 +17,7 @@ public class StockService {
 
 		Stock newStock = new Stock();
 		
+		newStock.setId(0);
 		newStock.setStockTicker(stockTicker);
 		newStock.setBuyOrSell(buyOrSell);
 		newStock.setStatusCode(statusCode);
