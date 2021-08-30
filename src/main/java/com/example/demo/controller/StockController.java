@@ -23,15 +23,14 @@ import com.example.demo.repository.StockRepository;
 @RequestMapping("/api")
 @Validated
 public class StockController {
-	@Autowired
-	private StockRepository stockRepository;
+
 	@Autowired
 	StockService stockService;
 
 
 	@GetMapping(value="/trades")
      List getAll(){
-         return stockRepository.findAll();
+        stockService.getAllTransactions();
      }
 
 

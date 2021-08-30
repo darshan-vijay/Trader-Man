@@ -40,4 +40,9 @@ public class StockService {
 		stockRepo.save(stock);
 		return true;
 	}
+
+	public List getAllTransactions()
+	{
+		return stockRepo.findAll();
+	}
 }
