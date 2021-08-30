@@ -10,7 +10,7 @@ import com.example.demo.repository.StockRepository;
 @Service
 public class StockService {
 	@Autowired
-	StockRepository repo;
+	StockRepository stockRepo;
 	
 	public void insertTransaction(String stockTicker, double price, int volume, String buyOrSell, int statusCode,
 			LocalDateTime date) {
@@ -25,7 +25,19 @@ public class StockService {
 		newStock.setPrice(price);	
 		newStock.setDate(LocalDateTime.now());
 		
-		repo.save(newStock);
-	}
+		stockRepo.save(newStock);
+		}
 	
+	public Boolean updateTrade(Integer Id ,String ticker ,Integer price,Integer volume, String buyOrSell) {
+		Stock stock = stockRepo.findById(Id).orElse(null);
+		if(stock == null) return false;
+		
+		stock.setStockTicker(ticker);
+		stock.setPrice(price);
+		stock.setVolume(volume);
+		stock.setBuyOrSell(buyOrSell);
+		
+		stockRepo.save(stock);
+		return true;
+	}
 }
