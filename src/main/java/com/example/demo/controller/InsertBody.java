@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import java.time.LocalDateTime;
 
 public class InsertBody {
 	
@@ -9,22 +8,19 @@ public class InsertBody {
 	int volume;
 	private String buyOrSell;
 	private int statusCode;
-	private LocalDateTime date;
 	
 
 	public InsertBody() {
 		super();
 	}
 	
-	 public InsertBody( String stockTicker, double price, int volume, String buyOrSell, int statusCode,
-			LocalDateTime date) {
+	 public InsertBody( String stockTicker, double price, int volume, String buyOrSell, int statusCode) {
 		super();
 		this.stockTicker = stockTicker;
 		this.price = price;
 		this.volume = volume;
 		this.buyOrSell = buyOrSell;
 		this.statusCode = statusCode;
-		this.date = date;
 	}
 	 
 	public String getStockTicker() {
@@ -56,11 +52,5 @@ public class InsertBody {
 	}
 	public void setStatusCode(int statusCode) {
 		this.statusCode = statusCode;
-	}
-	public LocalDateTime getDate() {
-		return date;
-	}
-	public void setDate(LocalDateTime date) {
-		this.date = date;
 	}
 }

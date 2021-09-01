@@ -14,8 +14,7 @@ public class StockService {
 	@Autowired
 	StockRepository stockRepo;
 
-	public void insertTransaction(String stockTicker, double price, int volume, String buyOrSell, int statusCode,
-			LocalDateTime date) {
+	public void insertTransaction(String stockTicker, double price, int volume, String buyOrSell, int statusCode) {
 
 		Stock newStock = new Stock();
 

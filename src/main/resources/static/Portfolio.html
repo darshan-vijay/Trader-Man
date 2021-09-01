@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TraderMan-Portfolio</title>
+    <link href="styles/navigation.css" rel="stylesheet"/><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" />
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" ></script>
+    <script src="scripts/navigation.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Offside&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js" integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<link rel="stylesheet" href="styles/portfolio.css">
+<script src="scripts/portfolio.js"></script>
+</head>
+<body>
+    <body id="body-pd">
+        <header class="header" id="header">
+            <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle" onclick="showit()"></i> </div>
+            <div class="company_name" href="Stock-Exchange.html"  >TRADERMAN</div>
+            <div class="header_img"> <img src="images/user_image.jpg" alt=""> </div>
+        </header>
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div> 
+                    <a href="Stock-Exchange.html"  class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name company_name " style="font-size:18px;font: weight 400px;">TRADERMAN</span> </a>
+                    
+                    <div class="nav_list"> 
+                        <div style="display: none; align-items: center; margin-bottom: 20px;" id="profileImg"><a href="#"><span > <img class="mx-auto d-block profile_img" src="images/user.png"  alt=""> </span> </a> </div>
+                        <div id="place_holder" style="height:120px;display:block;"></div>
+                        <a href="Stock-Exchange.html" class="nav_link"> <i class='bi bi-cash-coin nav_icon'></i> <span class="nav_name">Exchange</span> </a> 
+                        <a href="Portfolio.html" class="nav_link active"> <i class='bx bx-pie-chart nav_icon'></i> <span class="nav_name">Portfolio</span> </a> 
+                        <a href="#" class="nav_link"> <i class='bx bx-history nav_icon'></i> <span class="nav_name">Order History</span> </a> 
+                        <a href="#" class="nav_link"> <i class='far fa-handshake nav_icon'></i> <span class="nav_name">Transaction History</span> </a> 
+                        <a href="#" class="nav_link"> <i class='bx bx-briefcase nav_icon'></i> <span class="nav_name">Holdings</span> </a> 
+                    </div>
+                </div> 
+            </nav>
+        </div>
+        <!--Container Main start-->
+                <div class="height-100 bg-light" style="margin-top:100px;">
+                    
+                <figure class="text-center">
+                <h1 class="display-5">My Portfolio</h1>
+                <p class="lead">
+                This is your portfolio , a compilation of all your investments.
+                </p>
+            </figure>
+
+            <canvas id="myChart" width="500" height="500 "></canvas>
+
+        </div>
+        <!--Container Main end-->
+</body>
+<script>
+
+
+
+fetch('http://localhost:8085/api/trades')
+    .then(response => response.json())
+    .then(data1 => {
+    console.log(data1)
+        getPieData(data1)
+    })
+
+
+
+const pieData=[]
+const labelData=[]
+const pieDataUnique=[]
+const labelDataUnique=[]
+
+    const data = {
+        labels: labelDataUnique,
+        datasets: [{
+          label: 'Stocks',
+          data: pieDataUnique,
+          backgroundColor: [
+            'rgb(51, 66, 87)',
+            'rgb(71, 96, 114)',
+            'rgb(84, 140, 168)'
+          ],
+          hoverOffset: 4
+        }]
+    };
+    
+    const config = {
+        type: 'doughnut',
+        data: data,
+        options: {
+        	responsive: false,
+            plugins: {
+  legend: {
+    position: 'top'
+  }
+}
+        }
+      };
+    
+      var ctx=document.getElementById("myChart");
+      var myChart = new Chart(ctx,config);
+
+      
+</script>
+<script>
+ function showit(){
+    var x = document.getElementById("profileImg");
+    var y = document.getElementById("place_holder");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.style.display="none";
+
+  } else {
+    x.style.display = "none";
+    y.style.display="block";
+  }
+     
+ }
+</script>
+</html>

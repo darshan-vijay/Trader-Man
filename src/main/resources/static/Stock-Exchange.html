@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TraderMan-Exchange</title>
+    <link href="styles/navigation.css" rel="stylesheet"/><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" />
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" ></script>
+    <script src="scripts/navigation.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Offside&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles/exchange.css" type="text/CSS">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script> 
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <body id="body-pd">
+        <header class="header" id="header">
+            <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle" onclick="showit()"></i> </div>
+            <div class="company_name">TRADERMAN</div>
+            <div class="header_img"> <img src="images/user_image.jpg" alt=""> </div>
+        </header>
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div> 
+                    <a href="Stock-Exchange.html"  class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name company_name " style="font-size:18px;font: weight 400px;">TRADERMAN</span> </a>
+                    
+                    <div class="nav_list"> 
+                        <div style="display: none; align-items: center; margin-bottom: 20px;" id="profileImg"><a href="#"><span > <img class="mx-auto d-block profile_img" src="images/user.png"  alt=""> </span> </a> </div>
+                        <div id="place_holder" style="height:120px;display:block;"></div>
+                        <a href="Stock-Exchange.html" class="nav_link active"> <i class='bi bi-cash-coin nav_icon'></i> <span class="nav_name">Exchange</span> </a> 
+                        <a href="Portfolio.html" class="nav_link"> <i class='bx bx-pie-chart nav_icon'></i> <span class="nav_name">Portfolio</span> </a> 
+                        <a href="#" class="nav_link"> <i class='bx bx-history nav_icon'></i> <span class="nav_name">Order History</span> </a> 
+                        <a href="#" class="nav_link"> <i class='far fa-handshake nav_icon'></i> <span class="nav_name">Transaction History</span> </a> 
+                        <a href="#" class="nav_link"> <i class='bx bx-briefcase nav_icon'></i> <span class="nav_name">Holdings</span> </a> 
+                    </div>
+                </div> 
+            </nav>
+        </div>
+        <center style="margin-top:100px">
+
+            <input id="searchbar" onkeyup="searchStocks()" style="height:50px;" type="text"  name="search" placeholder="Search stocks..">
+        
+                <div id="render"></div>
+</center>
+    </body>
+    <script>
+        let symbols =[];
+        
+
+    fetch('https://v588nmxc10.execute-api.us-east-1.amazonaws.com/default/tickerList')
+    .then(response => response.json())
+    .then(tickers => {
+       //  symbols = tickers.map(tickersymbol => tickersymbol.symbol);
+       //  const shuffled = symbols.sort(() => 0.5 - Math.random());
+        // Get sub-array of first n elements after shuffled
+       //  symbols = shuffled.slice(0, 100);
+        // console.log(symbols);
+    })
+
+        function searchStocks() {
+            let input = document.getElementById('searchbar').value
+            input=input.toLowerCase();
+            let x = document.getElementsByClassName('stockName');
+            for (i = 0; i < x.length; i++) { 
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                     x[i].parentElement.parentElement.style.display="none";
+                }
+                else {
+                     x[i].parentElement.parentElement.style.display="block";            
+                }
+            }
+        }
+        
+
+        function toggleTitle(company){
+    var x = document.getElementById(company+"ModalID");
+    var y = document.getElementById(company+"ModalButton");
+    var z = document.getElementById(company+"buy_or_sell");
+    if (x.innerHTML == "Buy Stocks") {
+        x.innerHTML = "Sell Stocks";
+        y.innerHTML = "Sell";
+        z.value = "sell";
+
+
+    } else {
+        x.innerHTML = "Buy Stocks";
+        y.innerHTML = "Buy";
+        z.value = "buy";
+
+    }
+        
+    }
+
+    function getCurrPrice(tickername)
+{
+    $.ajax({
+  url: 'https://jqjfct0r76.execute-api.us-east-1.amazonaws.com/default/PythonPandas',
+ type: 'GET',
+ data: { 
+    ticker:tickername,
+    num_days:1 
+    },
+    success: function(res) {
+         console.log(res);
+        var jsonres=JSON.parse(res)
+       
+        document.getElementById(tickername+"currprice").innerHTML="$"+jsonres.price_data['0'][1].toFixed(2);
+        document.getElementById(tickername+"modalprice").value=jsonres.price_data['0'][1].toFixed(2);
+        
+        document.getElementById(tickername+"total").value=jsonres.price_data['0'][1].toFixed(2);
+    }
+    
+    
+})
+
+}
+function renderCurrPrice(companyName){
+    for(company of companyName){
+        getCurrPrice(company);
+    }
+}
+
+
+function getDiffPrice(tickername)
+{
+    $.ajax({
+  url: 'https://jqjfct0r76.execute-api.us-east-1.amazonaws.com/default/PythonPandas',
+ type: 'GET',
+ data: { 
+    ticker:tickername,
+    num_days:2 
+    },
+    success: function(res) {
+         console.log(res);
+        var jsonres=JSON.parse(res)
+       let yesterdayPrice = jsonres.price_data['0'][1];
+       let todaysPrice = jsonres.price_data['1'][1];
+
+        document.getElementById(tickername+"diffprice").innerHTML="$"+(yesterdayPrice-todaysPrice).toFixed(2);
+        if( (yesterdayPrice-todaysPrice).toFixed(2) >0){
+        document.getElementById(tickername+"diffper").style.color="green";
+        
+        document.getElementById(tickername+"diffper").innerHTML="&uarr;"+((((yesterdayPrice-todaysPrice).toFixed(2))/yesterdayPrice)*100).toFixed(2)+"%";
+        }
+        else{
+         document.getElementById(tickername+"diffper").style.color="red";
+         
+        document.getElementById(tickername+"diffper").innerHTML="&darr;"+(Math.abs((((yesterdayPrice-todaysPrice).toFixed(2))/yesterdayPrice)*100).toFixed(2))+"%";
+        }
+    }
+    
+    
+})
+
+}
+
+function makePOSTrequest(company) {
+	var sendata ={
+		  "buyOrSell": document.getElementById(company+"buy_or_sell").value,
+		  "price": parseInt(document.getElementById(company+"modalprice").value),
+		  "statusCode": 0,
+		  "stockTicker": company,
+		  "volume": parseInt(document.getElementById(company+"modalquantity").value)
+		};
+	sendata=JSON.stringify(sendata);
+	console.log(sendata);
+        $.ajax({
+            url: '/api/add',
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json',
+            mode: 'no-cors',
+	    data: sendata,
+            success: function (result) {
+            }
+        });
+
+        var button = document.getElementById(company+"close");
+        button.click();
+       setTimeout(function(){ alert('An order for the '+company+' stocks has been placed'); }, 400);
+        
+    }
+
+
+function renderDiffPrice(companyName){
+    for(company of companyName){
+        getDiffPrice(company);
+    }
+}
+
+function getGraphXY(tickername)
+{
+    $.ajax({
+  url: 'https://jqjfct0r76.execute-api.us-east-1.amazonaws.com/default/PythonPandas',
+ type: 'GET',
+ data: { 
+    ticker:tickername,
+    num_days:10 
+    },
+    success: function(res) {
+        var xAxis=[]
+        var yAxis=[]
+         console.log(res);
+        var jsonres=JSON.parse(res)
+       for(item of jsonres.price_data)
+       {
+           
+           xAxis.push(item[0])
+           yAxis.push(item[1])
+       }
+       new Chart(tickername+"Chart", {
+                type: "line",
+                data: {
+                    labels: xAxis,
+                    datasets: [{
+                        fill: false,
+                        lineTension: 0,
+                        backgroundColor: "rgb(76, 43, 194)" ,
+                        borderColor: "rgba(0,0,255,0.2)",
+                        data: yAxis
+                    }]
+                },
+                options: {
+                    legend: {display: false},
+                    scales: {
+                        yAxes: [{ticks: {min: (Math.min.apply(this, yAxis) - 5), max:(Math.max.apply(this, yAxis) + 5)}}],
+                    }
+                }
+            });
+    }
+    
+    
+})
+
+}
+
+let listcomp=["ZIOP","AMZN","TSLA","AAPL","NVDA", "ELMD", "DT", "JFR", "HX", "GXII", "ICBK", "BRW", "CRF", "HFBL", "ALNA", "AVB", "INS", "GWRE", "GNE", "ATRS", "ITI", "GRTX", "ATCO", "INTU", "INVZ", "GRIN", "IP"];
+function render(){
+    
+    for(company of listcomp){
+        document.getElementById("render").innerHTML+="<div class='stockTile'> <div class='firstPart'> <div class='stockName'><h2>"+company+"</h2></div> <div class='stockPrice'><h6 id='"+company+"currprice'></h6></div> </div> <br/><br/> <div class='secondPart'> <div class='DiffVal'><h6 id='"+company+"diffprice'></h6></div> <div class='DiffPer'><h6 id='"+company+"diffper'></h6></div> <div id='"+company+"expand' class='divexpand'> <center><a href='#' id='"+company+"viewDetails' >View Details</a></center> <div class='divcollapse' id='"+company+"collapse'> <div class='graph'> <canvas id='"+company+"Chart' style='width:75%;margin-top:2%;'></canvas> </div> </div> </div> </div> <div class='row'> <div class='col-lg-8'></div> <div class='col-lg-4'> <div class='buyORsell'> <button type='button' class='button1 btn ' data-toggle='modal' data-target='#"+company+"ModalCenter'>Buy/Sell</a> </div> </div> </div> </div> <div class='modal fade' id='"+company+"ModalCenter' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'> <div class='modal-dialog modal-dialog-centered' role='document'> <div class='modal-content'> <div class='modal-header'> <h5 class='modal-title' id='"+company+"ModalID'>Buy Stocks</h5> <div > <label class='switch' > <input id='"+company+"switch' type='checkbox' checked > <span class='slider round'></span> </label> </div> </div> <div class='modal-body'> <div class='mb-3 row'> <label for='stock' class='col-sm-2 col-form-label'>Stock :</label> <div class='col-sm-10'> <input type='text' readonly class='form-control-plaintext' id='"+company+"stock' value='"+company+"'> </div> </div> <div class='mb-3 row'> <label for='price' class='col-sm-2 col-form-label'>Price :</label> <div class='col-sm-10'> <input type='number' readonly class='form-control-plaintext' id='"+company+"modalprice' value='234'> </div> </div> <div class='mb-3 row'> <label for='quantity' class='col-sm-2 col-form-label'>Quantity :</label> <div class='col-sm-10'> <input type='number' class='form-control' id='"+company+"modalquantity' min='1' max='100' value='1'> </div> </div> <div class='mb-3 row'> <label for='Totalamount' class='col-sm-2 col-form-label'>Total :</label> <div class='col-sm-10'> <input type='number' readonly class='form-control-plaintext' id='"+company+"total' value='234'> </div> </div> <input type='hidden' name='buy_or_sell' id='"+company+"buy_or_sell' value='buy'> </div> <div class='modal-footer'> <button type='button' class='btn btn-secondary' id='"+company+"close' data-dismiss='modal'>Close</button> <button type='button' id='"+company+"ModalButton' class='btn btn-primary'>Buy</button> </div> </div> </div> </div> </center>";
+        document.getElementById(company+'viewDetails').setAttribute('onclick',"getGraphXY('"+company+"')");
+        document.getElementById(company+'expand').setAttribute('onclick',"toggle('"+company+"collapse')");
+         document.getElementById(company+'modalquantity').setAttribute('onchange',"totalview('"+company+"')");
+         document.getElementById(company+'ModalButton').setAttribute('onclick',"makePOSTrequest('"+company+"')");
+         document.getElementById(company+'switch').setAttribute('onclick',"toggleTitle('"+company+"')");
+    }
+    
+}
+
+function totalview(id){
+    document.getElementById(id+'total').value = document.getElementById(id+'modalquantity').value * document.getElementById(id+'modalprice').value;
+    }
+
+function toggle(id){
+    var z = document.getElementById(id);
+    if (z.style.display == "block") {
+        z.style.display ="none";
+    }
+    else{
+        z.style.display ="block";
+    }
+}
+
+function getChart(company){
+    var xValues = [];
+    var yValues = [];
+    getGraphXY(company);
+    new Chart(company+"Chart", {
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [{
+                fill: false,
+                lineTension: 0,
+                backgroundColor: "rgb(76, 43, 194)" ,
+                borderColor: "rgba(0,0,255,0.2)",
+                data: yValues
+            }]
+        },
+        options: {
+            legend: {display: false},
+            scales: {
+                yAxes: [{ticks: {min: 650, max:730}}],
+            }
+        }
+    });
+}
+
+
+$('.divexpand').click(function(){
+    $(this).find('.divcollapse').slideToggle('slow');
+});
+
+
+render();
+renderCurrPrice(listcomp);
+renderDiffPrice(listcomp);
+    </script>
+</html>
