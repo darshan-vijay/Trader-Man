@@ -42,7 +42,7 @@
                         <div style="display: none; align-items: center; margin-bottom: 20px;" id="profileImg"><a href="#"><span > <img class="mx-auto d-block profile_img" src="images/user.png"  alt=""> </span> </a> </div>
                         <div id="place_holder" style="height:120px;display:block;"></div>
                         <a href="Stock-Exchange.html" class="nav_link "> <i class='bi bi-cash-coin nav_icon'></i> <span class="nav_name">Exchange</span> </a> 
-                        <a href="Portfolio.html" class="nav_link active" > <i class='bx bx-pie-chart nav_icon'></i> <span class="nav_name">Portfolio</span> </a> 
+                        <a href="Portfolio.html" class="nav_link active" "> <i class='bx bx-pie-chart nav_icon'></i> <span class="nav_name">Portfolio</span> </a> 
                         <a href="OrderHistory.html" class="nav_link"> <i class='bx bx-history nav_icon'></i> <span class="nav_name">Order History</span> </a> 
                         <a href="TransactionHistory.html" class="nav_link" > <i class='far fa-handshake nav_icon'></i> <span class="nav_name">Transaction History</span> </a> 
                         <a href="#" class="nav_link"> <i class='bx bx-briefcase nav_icon'></i> <span class="nav_name">Holdings</span> </a> 
@@ -58,6 +58,7 @@
                 <p class="lead">
                 This is your portfolio , a compilation of all your investments.
                 </p>
+                <button type="button" onclick="refreshPage()" class= "btn btn-primary">View Portfolio</button>
             </figure>
 
             <canvas id="myChart" width="500" height="500 "></canvas>
@@ -68,20 +69,23 @@
 <script>
 
 
-
+function refreshPage(){
+ data1=[];
+    console.log("inside");
 fetch('http://localhost:8085/api/trades')
     .then(response => response.json())
     .then(data1 => {
     console.log(data1)
         getPieData(data1)
     })
+}
 
 
 
-const pieData=[]
-const labelData=[]
-const pieDataUnique=[]
-const labelDataUnique=[]
+var pieData=[]
+var labelData=[]
+var pieDataUnique=[]
+var labelDataUnique=[]
 
     const data = {
         labels: labelDataUnique,

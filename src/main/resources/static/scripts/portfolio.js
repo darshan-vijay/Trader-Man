@@ -16,9 +16,10 @@
 // );
 
 function getPieData(data1)
-{
+{	let data2=[];
     for(item of data1)
-    {	if(item.status_code == "2"){
+    {	if(item.statusCode == "2"){
+    	data2.push(item)
         pieData.push(item.volume) 
         labelData.push(item.stockTicker)
         }
@@ -39,10 +40,15 @@ function getPieData(data1)
             let sum=0
             for(var i=0;i<labelData.length;i++)
                 {
-                    if(stock==labelData[i])
+                    if(stock==labelData[i] && data2[i].buyOrSell =="buy")
                     {
                     
-                        sum+=pieData[i]*data1[i].price
+                        sum+=pieData[i]*data2[i].price
+                    }
+                    if(stock==labelData[i] && data2[i].buyOrSell =="sell")
+                    {
+                    
+                        sum-=pieData[i]*data2[i].price
                     }
                     
                 }

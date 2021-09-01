@@ -12,13 +12,14 @@ function getOrders()
                     temp += "<td>" + itemData.price + "</td>";
                     temp += "<td>" + itemData.volume + "</td>";
                     temp += "<td>" + itemData.buyOrSell + "</td>";
-                    if(itemData.statusCode==1){temp += "<td>" + "Success" + "</td>";}
-          			else if(itemData.statusCode==0){temp += "<td>" + "On Process" + "</td>";}
-          			else if(itemData.statusCode==2){temp += "<td>" + "Failure" + "</td>";}
+                    if(itemData.statusCode==3){temp += "<td>" + "Failure" + "</td>";}
+          			else if(itemData.statusCode==0 || itemData.statusCode==1 ){temp += "<td>" + "On Process" + "</td>";}
+          			else if(itemData.statusCode==2){temp += "<td>" + "Success" + "</td>";}
                     temp += "<td>" + itemData.date + "</td>";
 					if(itemData.statusCode==0){temp+= "<td><button type='button' onclick='populateDialog(" + itemData.id + ")' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal'>Edit</button></td></tr>";}
-					else if(itemData.statusCode==1){temp += "<td>" + "Order Successful" + "</td>";}
-					else if(itemData.statusCode==1){temp += "<td>" + "Order Failed" + "</td>";}
+					else if(itemData.statusCode==2){temp += "<td>" + "Order Successful" + "</td>";}
+					else if(itemData.statusCode==1){temp += "<td>" + "Order Processing" + "</td>";}
+					else if(itemData.statusCode==3){temp += "<td>" + "Order Failed" + "</td>";}
 					});
 				 document.getElementById('tbodyOrders').innerHTML = temp; 
 				 }	
