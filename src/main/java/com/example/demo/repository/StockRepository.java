@@ -8,4 +8,7 @@ import com.example.demo.entity.Stock;
 
 public interface StockRepository extends JpaRepository<Stock, Integer> {
 	Optional<Stock> findById(Integer id);
+
+	public Stock getStockById(int id);
+
 }

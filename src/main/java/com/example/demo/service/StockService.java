@@ -29,6 +29,10 @@ public class StockService {
 		stockRepo.save(newStock);
 	}
 
+	public Stock getStock(int id) {
+		return stockRepo.getStockById(id);
+	}
+
 	public Boolean updateTrade(Integer Id, String ticker, Integer price, Integer volume, String buyOrSell) {
 		Stock stock = stockRepo.findById(Id).orElse(null);
 		if (stock == null)
