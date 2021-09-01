@@ -1,9 +1,27 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="ISO-8859-1">
-	<title>Transaction History</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TraderMan-TransactionHistory</title>
+    <link href="styles/navigation.css" rel="stylesheet"/><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" />
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" ></script>
+    <script src="scripts/navigation.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Offside&display=swap" rel="stylesheet">
+<link
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 		rel="stylesheet"
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
@@ -13,11 +31,37 @@
 		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 		crossorigin="anonymous"></script>
 	
-	<script src="TransactionHistoryScript.js" type="text/javascript">	</script>
+	<script src="scripts/TransactionHistoryScript.js" type="text/javascript">	</script>
+
 </head>
 <body>
-    <center>
-    <div class="col" style="margin:1%;">
+    <body id="body-pd">
+        <header class="header" id="header">
+            <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle" onclick="showit()"></i> </div>
+            <div class="company_name"  >TRADERMAN</div>
+            <div class="header_img"> <img src="images/user_image.jpg" alt=""> </div>
+        </header>
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div> 
+                    <a href="Stock-Exchange.html" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name company_name " style="font-size:18px;font: weight 400px;">TRADERMAN</span> </a>
+                    
+                    <div class="nav_list"> 
+                        <div style="display: none; align-items: center; margin-bottom: 20px;" id="profileImg"><a href="#"><span > <img class="mx-auto d-block profile_img" src="images/user.png"  alt=""> </span> </a> </div>
+                        <div id="place_holder" style="height:120px;display:block;"></div>
+                        <a href="Stock-Exchange.html" class="nav_link "> <i class='bi bi-cash-coin nav_icon'></i> <span class="nav_name">Exchange</span> </a> 
+                        <a href="Portfolio.html" class="nav_link"> <i class='bx bx-pie-chart nav_icon'></i> <span class="nav_name">Portfolio</span> </a> 
+                        <a href="OrderHistory.html" class="nav_link"> <i class='bx bx-history nav_icon'></i> <span class="nav_name">Order History</span> </a> 
+                        <a href="TransactionHistory.html" class="nav_link active" > <i class='far fa-handshake nav_icon'></i> <span class="nav_name">Transaction History</span> </a> 
+                        <a href="#" class="nav_link"> <i class='bx bx-briefcase nav_icon'></i> <span class="nav_name">Holdings</span> </a> 
+                    </div>
+                </div> 
+            </nav>
+        </div>
+        <!--Container Main start-->
+        <div class="height-100 bg-light">
+<center>
+    <div class="col" style="margin:1%; margin-top:100px !important;">
 		<div class="card" style="width: 90%">
 				<div class="card-body">
 					<h5 class="card-title" style="font-size:40px; font-weight:bolder; background-color:lightblue; padding:1%;">Transaction History</h5>
@@ -40,6 +84,7 @@
 				</div>
 		</div>
 	</div>
-	</center>
+</center>
+</div>
 </body>
 </html>
