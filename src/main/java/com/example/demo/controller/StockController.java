@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import java.util.List;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,5 +58,10 @@ public class StockController {
 
 		stockService.updateTrade(id, stockTicker, price, volume, buyOrSell);
 		return "Updated";
+	}
+
+	@GetMapping(path = "/holdings")
+	public List<Holding> getHoldings() throws JsonProcessingException {
+		return stockService.getHoldings();
 	}
 }
