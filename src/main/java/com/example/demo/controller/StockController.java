@@ -23,7 +23,6 @@ import com.example.demo.service.StockService;
 @RestController
 @RequestMapping("/api")
 @Validated
-@CrossOrigin
 public class StockController {
 	private static final Logger LOG = LoggerFactory.getLogger(StockController.class);
 

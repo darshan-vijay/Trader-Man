@@ -18,9 +18,10 @@
 function getPieData(data1)
 {
     for(item of data1)
-    {
+    {	if(item.status_code == "2"){
         pieData.push(item.volume) 
         labelData.push(item.stockTicker)
+        }
     }
         console.log(pieData)
         console.log(labelData)
@@ -40,6 +41,7 @@ function getPieData(data1)
                 {
                     if(stock==labelData[i])
                     {
+                    
                         sum+=pieData[i]*data1[i].price
                     }
                     
