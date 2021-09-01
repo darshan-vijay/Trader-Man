@@ -2,9 +2,13 @@ package com.example.demo.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +22,9 @@ import com.example.demo.service.StockService;
 @RestController
 @RequestMapping("/api")
 @Validated
+@CrossOrigin
 public class StockController {
+	private static final Logger LOG = LoggerFactory.getLogger(StockController.class);
 
 	@Autowired
 	StockService stockService;
@@ -26,6 +32,12 @@ public class StockController {
 	@GetMapping(value = "/trades")
 	List<Stock> getAll() {
 		return stockService.getAllTransactions();
+	}
+
+	@GetMapping(value = "/{id}")
+	public Stock getStockById(@PathVariable("id") int id) {
+		LOG.debug("getStockById, id=[" + id + "]");
+		return stockService.getStock(id);
 	}
 
 	@PostMapping("/add")
