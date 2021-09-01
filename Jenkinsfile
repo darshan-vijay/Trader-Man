@@ -1,4 +1,4 @@
-def mysqlHost = 'citichennai52.conygre.com'
+def mysqlHost = 'chennaidevops52.conygre.com'
 def projectName = 'Trade-api'
 def version = "0.0.${currentBuild.number}"
 def dockerImageTag = "${projectName}:${version}"
